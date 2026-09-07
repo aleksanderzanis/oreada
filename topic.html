@@ -7,76 +7,133 @@
     <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                light: '#a7f3d0',
+                DEFAULT: '#10b981',
+                dark: '#047857',
+              }
+            }
+          }
+        }
+      }
+    </script>
 </head>
 <body>
-    
-    <div id="preloader">
-        <div class="preloader-logo" data-i18n="logo">🌿 Oreada</div>
-    </div>
 
     <div id="navbar-placeholder"></div>
 
-    <section class="mission-section">
-        <h2 data-i18n="topic_title" class="fade-in-up">Tema</h2>
-        <!-- Foto e re gjithëpërfshirëse mjedisore (me kualitet më të lartë) -->
-        <!-- <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Tema e Muajit" class="page-image fade-in-up stagger-1"> -->
-        
-        <!-- <h3 data-i18n="activity_objective" class="fade-in-up stagger-2" style="color: var(--primary-color); margin-bottom: 1.5rem; margin-top: 2rem; font-size: 2.2rem;">Objekti i Veprimtarisë</h3> -->
-        
-        <ul class="custom-list">
-            <li class="fade-in-up stagger-3">
-                <i class="fa-solid fa-water"></i>
-                <div><strong data-i18n="obj_a_title">Mbrojtja e ujërave:</strong> <span data-i18n="obj_a_desc">sigurimi i cilësisë...</span></div>
-            </li>
-            <li class="fade-in-up stagger-4">
-                <i class="fa-solid fa-cloud"></i>
-                <div><strong data-i18n="obj_b_title">Menaxhimi i ajrit dhe klimës:</strong> <span data-i18n="obj_b_desc">monitorimi i ndotjes...</span></div>
-            </li>
-            <li class="fade-in-up stagger-5">
-                <i class="fa-solid fa-leaf"></i>
-                <div><strong data-i18n="obj_c_title">Ruajtja e tokës dhe biodiversitetit:</strong> <span data-i18n="obj_c_desc">mbrojtja e florës...</span></div>
-            </li>
-            <li class="fade-in-up stagger-6">
-                <i class="fa-solid fa-tree"></i>
-                <div><strong data-i18n="obj_d_title">Mbrojtja dhe rikuperimi i ekosistemeve:</strong> <span data-i18n="obj_d_desc">realizimi i projekteve...</span></div>
-            </li>
-            <li class="fade-in-up stagger-7">
-                <i class="fa-solid fa-temperature-arrow-down"></i>
-                <div><strong data-i18n="obj_e_title">Parandalimi dhe adaptimi ndaj ndryshimeve klimatike:</strong> <span data-i18n="obj_e_desc">studime dhe projekte...</span></div>
-            </li>
-            <li class="fade-in-up stagger-8">
-                <i class="fa-solid fa-recycle"></i>
-                <div><strong data-i18n="obj_f_title">Menaxhimi i mbeturinave dhe riciklimi:</strong> <span data-i18n="obj_f_desc">promovimi i riciklimit...</span></div>
-            </li>
-            <li class="fade-in-up stagger-9">
-                <i class="fa-solid fa-solar-panel"></i>
-                <div><strong data-i18n="obj_g_title">Energjia e qëndrueshme dhe teknologjitë e gjelbra:</strong> <span data-i18n="obj_g_desc">mbështetja e përdorimit...</span></div>
-            </li>
-            <li class="fade-in-up stagger-10">
-                <i class="fa-solid fa-users"></i>
-                <div><strong data-i18n="obj_h_title">Edukimi dhe ndërgjegjësimi publik:</strong> <span data-i18n="obj_h_desc">organizimi i fushatave...</span></div>
-            </li>
-            <li class="fade-in-up stagger-11">
-                <i class="fa-solid fa-microscope"></i>
-                <div><strong data-i18n="obj_i_title">Kërkime shkencore dhe monitorime:</strong> <span data-i18n="obj_i_desc">realizimi i studimeve...</span></div>
-            </li>
-            <li class="fade-in-up stagger-12">
-                <i class="fa-solid fa-globe"></i>
-                <div><strong data-i18n="obj_j_title">Politikat publike dhe bashkëpunimi ndërkombëtar:</strong> <span data-i18n="obj_j_desc">pjesëmarrja në rrjete...</span></div>
-            </li>
-            <li class="fade-in-up stagger-13">
-                <i class="fa-solid fa-seedling"></i>
-                <div><strong data-i18n="obj_k_title">Promovimi i qëndrueshmërisë në sektorë të ndryshëm:</strong> <span data-i18n="obj_k_desc">duke përfshirë turizmin...</span></div>
-            </li>
-            <li class="fade-in-up stagger-14">
-                <i class="fa-solid fa-lightbulb"></i>
-                <div><strong data-i18n="obj_l_title">Inovacioni dhe trajnim profesional:</strong> <span data-i18n="obj_l_desc">zhvillimi i kapaciteteve...</span></div>
-            </li>
-        </ul>
+    
+    
+    
+    
+    <section class="py-32 bg-gray-50 relative min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-green-600 to-emerald-800 rounded-[3rem] p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden fade-in-up">
+                <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E')]"></div>
+                <div class="relative z-10">
+                    <span class="inline-block py-1 px-4 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/30 text-sm font-bold tracking-widest uppercase mb-6" data-i18n="topic_page_badge">Objektivat Tona</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6" data-i18n="topic_title">Tema & Fokusi</h1>
+                    <p class="text-xl text-green-50 max-w-3xl mx-auto font-medium" data-i18n="topic_page_desc">Zbuloni fushat tona kryesore të veprimit për një të ardhme më të gjelbër dhe një mjedis më të pastër.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Objective Cards with Icons -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-water"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_a_title">Mbrojtja e ujërave:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_a_desc">sigurimi i cilësisë së ujit të pijshëm, mbrojtja e lumenjve, liqeneve, detit dhe zonave bregdetare.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 50ms;">
+                    <div class="w-14 h-14 bg-gray-50 text-gray-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-cloud"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_b_title">Menaxhimi i ajrit dhe klimës:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_b_desc">monitorimi i ndotjes së ajrit, reduktimi i gazrave serrë dhe strategji për përshtatjen ndaj ndryshimeve klimatike.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_c_title">Ruajtja e tokës dhe biodiversitetit:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_c_desc">mbrojtja e florës dhe faunës, restaurimi i habitateve natyrore dhe parandalimi i shkretëtirëzimit.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-tree"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_d_title">Mbrojtja dhe rikuperimi i ekosistemeve:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_d_desc">realizimi i projekteve për rikuperim ekologjik në zona të dëmtuara.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 50ms;">
+                    <div class="w-14 h-14 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_e_title">Parandalimi dhe adaptimi ndaj ndryshimeve klimatike:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_e_desc">studime dhe projekte për përgatitje ndaj rreziqeve nga fatkeqësitë natyrore, mbrojtja e pyjeve nga zjarret.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-recycle"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_f_title">Menaxhimi i mbeturinave dhe riciklimi:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_f_desc">promovimi i riciklimit, zvogëlimi i mbeturinave dhe zbatimi i ekonomisë qarkulluese.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-solar-panel"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_g_title">Energjia e qëndrueshme dhe teknologjitë e gjelbra:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_g_desc">mbështetja e përdorimit të burimeve të rinovueshme të energjisë dhe inovacioneve miqësore me mjedisin.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 50ms;">
+                    <div class="w-14 h-14 bg-purple-50 text-purple-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_h_title">Edukimi dhe ndërgjegjësimi publik:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_h_desc">organizimi i fushatave, trajnimeve, punëtorive dhe programeve edukative për të rritur vetëdijen mjedisore.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-microscope"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_i_title">Kërkime shkencore dhe monitorime:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_i_desc">realizimi i studimeve, inventarizimeve dhe monitorimeve të vazhdueshme të elementeve mjedisorë.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up">
+                    <div class="w-14 h-14 bg-indigo-50 text-indigo-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-globe"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_j_title">Politikat publike dhe bashkëpunimi ndërkombëtar:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_j_desc">pjesëmarrja në rrjete mjedisore, ndikimi në hartimin e politikave dhe bashkëpunimi me organizata të tjera.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 50ms;">
+                    <div class="w-14 h-14 bg-teal-50 text-teal-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_k_title">Promovimi i qëndrueshmërisë në sektorë të ndryshëm:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_k_desc">duke përfshirë turizmin, bujqësinë, urbanistikën dhe industrinë.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="obj_l_title">Inovacioni dhe trajnim profesional:</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="obj_l_desc">zhvillimi i kapaciteteve të individëve, shoqërisë civile, dhe institucioneve.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+
+
+
 
     <div id="footer-placeholder"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="site-content.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -7,74 +7,172 @@
     <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                light: '#a7f3d0',
+                DEFAULT: '#10b981',
+                dark: '#047857',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <script>
+      // Instantly apply cached hero background to prevent flash
+      try {
+          const cached = localStorage.getItem('oreada_site_content');
+          if (cached) {
+              const content = JSON.parse(cached);
+              const heroBg = content['home_hero_image']?.sq;
+              if (heroBg) {
+                  document.documentElement.style.setProperty('--hero-image', `url("${heroBg}")`);
+              }
+          }
+      } catch (e) {}
+    </script>
 </head>
 <body>
-    
-    <div id="preloader">
+    <script>
+      if (sessionStorage.getItem('site_opened')) {
+        document.documentElement.style.setProperty('--preloader-display', 'none');
+      } else {
+        sessionStorage.setItem('site_opened', 'true');
+      }
+    </script>
+    <div id="preloader" style="display: var(--preloader-display, flex)">
         <div class="preloader-logo" data-i18n="logo">🌿 Oreada</div>
     </div>
 
+
     <div id="navbar-placeholder"></div>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1 data-i18n="hero_title">Mbroni Natyrën, Mbroni të Ardhmen</h1>
-            <p data-i18n="hero_desc">Bashkohu me nismën tonë për të promovuar një zhvillim të qëndrueshëm dhe ndërgjegjësuar publikun mbi çështjet mjedisore dhe klimatike.</p>
-            <a href="#permbledhja" class="btn-primary" data-i18n="hero_btn">Shfleto Seksionet</a>
+    
+    
+    
+    
+    <header class="relative flex items-center justify-center min-h-screen overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: var(--hero-image, url('img/1.webp')); transform: scale(1.05); filter: blur(2px);"></div>
+        </div>
+        <div class="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-green-500/20 text-green-300 backdrop-blur-md border border-green-500/30 text-sm font-bold tracking-widest uppercase mb-6" data-i18n="hero_badge">Ruajmë Ekosistemin</span>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight mb-8 drop-shadow-lg" data-i18n="hero_title">Mbroni Natyrën,<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500">Mbroni të Ardhmen</span></h1>
+            <p class="mt-4 text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light drop-shadow-md" data-i18n="hero_desc">Bashkohu me nismën tonë për të promovuar një zhvillim të qëndrueshëm dhe ndërgjegjësuar publikun mbi çështjet mjedisore dhe klimatike.</p>
+            <div class="flex justify-center gap-4">
+                <a href="#permbledhja" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-full text-gray-900 bg-white hover:bg-green-50 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,255,255,0.4)] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-i18n="hero_btn">Zbuloni Më Shumë</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <a href="#permbledhja" class="text-white opacity-70 hover:opacity-100 transition-opacity"><i class="fa-solid fa-arrow-down text-3xl"></i></a>
         </div>
     </header>
 
-    <div id="permbledhja">
-        
-        <section class="scroll-section bg-white">
-            <div class="content-wrapper fade-in-left">
-                <h2 data-i18n="home_about_title">Rreth Nesh</h2>
-                <p data-i18n="home_about_desc">Zbuloni misionin tonë, vlerat dhe skuadrën e vullnetarëve pas kësaj nisme.</p>
-                <a href="about.html" class="btn-outline" data-i18n="btn_open">Hap Faqen</a>
-            </div>
-            <div class="image-wrapper fade-in-right">
-                <img src="https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--3a7f61da-f57e-4f53-93b5-05a2934e5cc4/ac4b8b89-en.jpg?quality=80&preferwebp=true" alt="Rreth Nesh">
+    <div id="permbledhja" class="bg-gray-50 overflow-hidden relative">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+        <!-- About Section -->
+        <section class="relative py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="fade-in-left relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-green-100 to-emerald-100 rounded-[3rem] transform -rotate-3 z-0"></div>
+                        <img data-content-src="home_about_image" src="img/2.webp" alt="Rreth Nesh" data-i18n-alt="home_about_title" class="relative z-10 rounded-[2.5rem] shadow-2xl w-full object-cover h-[500px] hover:scale-[1.02] transition-transform duration-500">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                            <div class="bg-green-100 p-3 rounded-full text-green-600 text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                            <div><p class="font-bold text-gray-900" data-i18n="about_badge_title">Komuniteti</p><p class="text-sm text-gray-500" data-i18n="about_badge_desc">Bashkohu Ne</p></div>
+                        </div>
+                    </div>
+                    <div class="mt-16 lg:mt-0 fade-in-right">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 relative inline-block">
+                            <span data-i18n="home_about_title">Rreth Nesh</span>
+                            <span class="absolute -bottom-2 left-0 w-1/3 h-1.5 bg-green-500 rounded-full"></span>
+                        </h2>
+                        <p class="text-xl text-gray-600 leading-relaxed mb-8" data-i18n="home_about_desc">Zbuloni misionin tonë, vlerat thelbësore dhe skuadrën e përkushtuar të vullnetarëve pas kësaj nisme. Ne jemi thellësisht të angazhuar për një të nesërme më të gjelbër, duke edukuar, përfshirë dhe frymëzuar komunitetin tonë lokal për të mbrojtur mjedisin dhe për të përqafuar praktika të qëndrueshme.</p>
+                        <a href="about.html" class="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 transition-all group"><span data-i18n="btn_open_about">Mëso më shumë</span> <i class="fa-solid fa-arrow-right transform group-hover:translate-x-2 transition-transform duration-300"></i></a>
+
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="scroll-section bg-light">
-            <div class="content-wrapper fade-in-right">
-                <h2 data-i18n="home_activities_title">Aktivitetet</h2>
-                <p data-i18n="home_activities_desc">Shikoni galeritë e fushatave tona të pastrimit, mbjelljes së pemëve dhe riciklimit.</p>
-                <a href="activities.html" class="btn-outline" data-i18n="btn_open">Hap Faqen</a>
-            </div>
-            <div class="image-wrapper fade-in-left">
-                <img src="https://sustainablebusinessmagazine.net/wp-content/uploads/2025/08/marine-life.jpg" alt="Aktivitetet">
-            </div>
-        </section>
-
-        <section class="scroll-section bg-white">
-            <div class="content-wrapper fade-in-left">
-                <h2 data-i18n="home_topic_title">Tema</h2>
-                <p data-i18n="home_topic_desc">Fokusi ynë aktual: Si të mbrojmë pyjet tona nga zjarret gjatë sezonit të verës.</p>
-                <a href="topic.html" class="btn-outline" data-i18n="btn_open">Hap Faqen</a>
-            </div>
-            <div class="image-wrapper fade-in-right">
-                <!-- Foto e re gjithëpërfshirëse mjedisore -->
-                <img src="https://akt.gov.al/wp-content/uploads/2025/10/Lumi-Mat-scaled.jpg" alt="Tema Mjedisore">
-            </div>
-        </section>
-
-        <section class="scroll-section bg-light">
-            <div class="content-wrapper fade-in-right">
-                <h2 data-i18n="home_services_title">Shërbimet</h2>
-                <p data-i18n="home_services_desc">Mësoni më shumë rreth programeve tona edukative dhe shërbimeve mjedisore.</p>
-                <a href="services.html" class="btn-outline" data-i18n="btn_open">Hap Faqen</a>
-            </div>
-            <div class="image-wrapper fade-in-left">
-                <img src="https://bluewaveadventures.com/wp-content/uploads/2025/07/atlantic-bottlenose-dolphin-under-water.jpg" alt="Shërbimet">
+        <!-- Activities Section -->
+        <section class="relative py-24 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center flex-row-reverse">
+                    <div class="fade-in-right relative order-1 lg:order-2">
+                        <div class="absolute -inset-4 bg-gradient-to-l from-green-100 to-emerald-100 rounded-[3rem] transform rotate-3 z-0"></div>
+                        <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl h-[500px] group">
+                            <img data-content-src="home_activities_image" src="img/3.webp" alt="Aktivitetet" data-i18n-alt="home_activities_title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8">
+                                <h3 class="text-3xl font-bold text-white mb-2" data-i18n="activities_overlay_title">Aksionet Tona</h3>
+                                <p class="text-gray-200" data-i18n="activities_overlay_desc">Bëhuni pjesë e ndryshimit fizik në komunitet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-16 lg:mt-0 fade-in-left order-2 lg:order-1">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 relative inline-block">
+                            <span data-i18n="home_activities_title">Aktivitetet</span>
+                            <span class="absolute -bottom-2 left-0 w-1/3 h-1.5 bg-green-500 rounded-full"></span>
+                        </h2>
+                        <p class="text-xl text-gray-600 leading-relaxed mb-8" data-i18n="home_activities_desc">Shikoni galeritë e fushatave tona të pastrimit, mbjelljes së pemëve dhe riciklimit. Puna jonë në terren ka një ndikim të drejtpërdrejtë dhe të prekshëm në mjedisin përreth nesh.</p>
+                        <a href="activities.html" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-green-600 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[0_10px_20px_rgba(16,185,129,0.4)] group"><span data-i18n="btn_open_activities">Shfleto Aktivitetet</span> <i class="fa-regular fa-images transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Topic & Services Grid -->
+        <section class="relative py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <span class="text-green-600 font-bold tracking-widest uppercase text-sm mb-2 block" data-i18n="focus_badge">Më Thellë</span>
+                    <h2 class="text-4xl font-extrabold text-gray-900" data-i18n="focus_title">Fokusi & Zgjidhjet</h2>
+                    <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto" data-i18n="focus_desc">Eksploroni thellësinë e ekspertizës sonë dhe programet e larmishme që ofrojmë për edukimin dhe mbrojtjen e natyrës.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Topic Card -->
+                    <div class="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow p-8 lg:p-10 border border-gray-100 fade-in-up">
+                        <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-8"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="home_topic_title">Tema</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="home_topic_desc">Mbrojtja e Planetit Tonë: Një nismë gjithëpërfshirëse për të ruajtur ekosistemet delikate, për të mbrojtur biodiversitetin dhe për të përballuar sfidat globale të klimës. Fokusi ynë aktual është marrja e masave proaktive për të mbrojtur pyjet tona nga zjarret gjatë sezonit të verës dhe për të ndërtuar një rezistencë afatgjatë klimatike në mbarë rajonin.</p>
+                        <img data-content-src="home_topic_image" src="img/4.webp" alt="Tema" data-i18n-alt="home_topic_title" class="w-full h-48 object-cover rounded-2xl mb-8">
+                        <a href="topic.html" class="w-full inline-flex items-center justify-center gap-2 py-3 bg-gray-50 text-gray-900 rounded-xl font-bold hover:bg-green-50 hover:text-green-700 hover:-translate-y-1 hover:shadow-md transition-all duration-300 group"><span data-i18n="topic_btn">Zbuloni Temën</span> <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition-transform duration-300"></i></a>
+                    </div>
+
+                    <!-- Services Card -->
+                    <div class="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow p-8 lg:p-10 border border-gray-100 fade-in-up" style="transition-delay: 100ms;">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-8"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="home_services_title">Shërbimet</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="home_services_desc">Mësoni më shumë rreth programeve tona të larmishme edukative dhe shërbimeve profesionale mjedisore. Ne ofrojmë seminare të specializuara, trajnime praktike për riciklimin dhe konsulencë eksperte mbi praktikat e gjelbra për të ndihmuar individët dhe bizneset të reduktojnë në mënyrë efektive gjurmën e tyre ekologjike.</p>
+                        <img data-content-src="home_services_image" src="img/5.webp" alt="Shërbimet" data-i18n-alt="home_services_title" class="w-full h-48 object-cover rounded-2xl mb-8">
+                        <a href="services.html" class="w-full inline-flex items-center justify-center gap-2 py-3 bg-gray-50 text-gray-900 rounded-xl font-bold hover:bg-emerald-50 hover:text-emerald-700 hover:-translate-y-1 hover:shadow-md transition-all duration-300 group"><span data-i18n="services_btn">Eksploro Shërbimet</span> <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1.5 transition-transform duration-300"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <div id="footer-placeholder"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="site-content.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

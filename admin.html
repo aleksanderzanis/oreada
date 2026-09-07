@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oreada Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="admin-card" id="loginCard">
+      <p class="eyebrow">OREADA</p><h1>Website editor</h1>
+      <p>Sign in to update the Albanian and English content shown on the site.</p>
+      <form id="loginForm"><label>Username<input type="text" id="username" required autocomplete="username"></label><label>Password<input type="password" id="password" required autocomplete="current-password"></label><button>Sign in</button></form>
+      <p class="message" id="loginMessage"></p>
+    </section>
+    <section class="admin-panel hidden" id="editorCard">
+      <header><div><p class="eyebrow">OREADA</p><h1>Website editor</h1><p>Changes go live as soon as you save them.</p></div><button class="secondary" id="signOut">Sign out</button></header>
+      <nav class="admin-tabs">
+        <!-- <button class="tab" data-tab="content">Website content</button> -->
+        <button class="tab active" data-tab="activities">Activities & photos</button>
+      </nav>
+      <section id="contentPanel" class="tab-panel hidden">
+        <div class="toolbar"><input id="contentSearch" placeholder="Search content"><button class="secondary" id="seedDefaults">Load current site text</button><span class="message" id="editorMessage"></span></div>
+        <p class="hint">Choose a website section, edit its content, then save each item.</p>
+        <div id="contentList" class="content-list"></div>
+      </section>
+      <section id="activitiesPanel" class="tab-panel">
+        <div class="toolbar"><button id="newActivity">Add activity</button><span class="message" id="activityMessage"></span></div>
+        <p class="hint">Add your own activities and photos. Upload a photo or paste its image address.</p>
+        <form id="activityForm" class="activity-form hidden">
+          <input type="hidden" id="activityId"><div class="language-grid"><label>Title (Albanian)<input id="activityTitleSq" required></label><label>Title (English)<input id="activityTitleEn"></label></div><div class="language-grid"><label>Description (Albanian)<textarea id="activityDescSq"></textarea></label><label>Description (English)<textarea id="activityDescEn"></textarea></label></div><div class="language-grid"><label>Date<input id="activityDate" type="date"></label><label>Photos & Videos<input id="activityImageFile" type="file" accept="image/*,video/*" multiple></label></div><label>Or photo/video addresses, or YouTube/Instagram links <small>(one link per line)</small><textarea id="activityImageUrl" placeholder="https://...\nhttps://..."></textarea></label><div id="photoPreview" class="photo-preview"></div><div class="item-actions"><button>Save activity</button><button class="secondary" type="button" id="cancelActivity">Cancel</button></div>
+        </form>
+        <div id="activityList" class="activity-admin-list"></div>
+      </section>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

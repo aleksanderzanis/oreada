@@ -7,37 +7,62 @@
     <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                light: '#a7f3d0',
+                DEFAULT: '#10b981',
+                dark: '#047857',
+              }
+            }
+          }
+        }
+      }
+    </script>
 </head>
 <body>
-
-    <div id="preloader">
-        <div class="preloader-logo" data-i18n="logo">🌿 Oreada</div>
-    </div>
     
     <div id="navbar-placeholder"></div>
 
-    <section class="mission-section">
-        <h2 data-i18n="ig_title" class="fade-in-up">Aktivitetet e Fundit</h2>
-        <p data-i18n="ig_desc" class="fade-in-up stagger-1">Ndiqni nismat tona më të fundit drejtpërdrejt nga faqja jonë zyrtare në Instagram.</p>
-        
-        <!-- Butoni i Instagramit -->
-        <a href="https://instagram.com/oreada_shoqatemjedisore" target="_blank" class="btn-instagram fade-in-up stagger-2">
-            <i class="fa-brands fa-instagram" style="font-size: 1.5rem;"></i>
-            <span data-i18n="ig_button">Na Ndiqni në Instagram</span>
-        </a>
-
-        <!-- Kutia ku do të shfaqen fotot e Instagramit -->
-        <div class="instagram-container fade-in-up stagger-3">
+    
+    
+    
+    
+    <section class="py-32 bg-gray-50 relative min-h-screen">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2310b981\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 text-sm font-bold tracking-widest uppercase mb-4" data-i18n="ig_badge">Galeria Jonë</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6" data-i18n="ig_title">Aktivitetet e Fundit</h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-i18n="ig_desc">Shikoni nismat, projektet dhe momentet tona më të fundit.</p>
+            </div>
             
-            <!-- Kodi yt i Elfsight Instagram Feed -->
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-d1179a56-fc96-4cf8-b625-415190a109b3" data-elfsight-app-lazy></div>
-            
+            <div id="activitiesGallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div id="activitiesEmpty" class="text-center py-20 text-gray-500 font-medium bg-white/50 backdrop-blur-sm rounded-[2rem] border border-gray-200 shadow-sm fade-in-up" data-i18n="activities_empty">
+                Aktivitete të reja do të shtohen së shpejti.
+            </div>
         </div>
     </section>
 
+
+
+
+
     <div id="footer-placeholder"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="site-content.js"></script>
     <script src="script.js"></script>
+    <script src="activities.js"></script>
 </body>
 </html>

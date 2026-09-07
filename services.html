@@ -7,24 +7,68 @@
     <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                light: '#a7f3d0',
+                DEFAULT: '#10b981',
+                dark: '#047857',
+              }
+            }
+          }
+        }
+      }
+    </script>
 </head>
 <body>
-    
-    <div id="preloader">
-        <div class="preloader-logo" data-i18n="logo">🌿 Oreada</div>
-    </div>
 
     <div id="navbar-placeholder"></div>
 
-    <section class="mission-section">
-        <h2 data-i18n="services_title" class="fade-in-up">Shërbimet</h2>
-        <img src="https://where2walk.co.uk/wp-content/uploads/2014/03/Place-Fell.jpg" alt="Shërbimet" class="page-image fade-in-up stagger-1">
-        <p data-i18n="services_desc1" class="fade-in-up stagger-2">Ne ofrojmë trajnime për riciklimin dhe konsulencë për praktika të gjelbra.</p>
-        <p data-i18n="services_desc2" class="fade-in-up stagger-3">Ne bashkëpunojmë me klientë dhe partnerë nga organizata të vogla jo-fitimprurëse dhe organizata të mëdha ndërkombëtare, nga qeveritë dhe akademia, si dhe nga shoqëria civile për ta bërë informacionin mjedisor sa më të aksesueshëm që të jetë e mundur.</p>
+    
+    
+    
+    
+    <section class="py-32 bg-gradient-to-br from-green-50 to-emerald-100 relative min-h-screen flex items-center overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="bg-white/70 backdrop-blur-xl rounded-[3rem] shadow-2xl p-8 md:p-16 border border-white/50 fade-in-up">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div>
+                        <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 text-sm font-bold tracking-widest uppercase mb-6" data-i18n="services_badge">Ofertat Tona</span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-8" data-i18n="services_title">Shërbimet</h1>
+                        <div class="w-20 h-1.5 bg-green-500 rounded-full mb-8"></div>
+                        <p class="text-xl text-gray-700 leading-relaxed font-medium" data-i18n="services_desc1">Ne ofrojmë trajnime për riciklimin dhe konsulencë për praktika të gjelbra. Ne bashkëpunojmë me klientë dhe partnerë nga organizata të ndryshme për ta bërë informacionin mjedisor sa më të aksesueshëm.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-green-300 to-emerald-400 rounded-[2.5rem] transform rotate-6 scale-105 opacity-20"></div>
+                        <img data-content-src="services_image" src="img/1.webp" alt="Shërbimet" data-i18n-alt="services_title" class="relative z-10 rounded-[2.5rem] shadow-xl w-full object-cover aspect-square md:aspect-auto md:h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
+    
+    
+    
 
     <div id="footer-placeholder"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="site-content.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
